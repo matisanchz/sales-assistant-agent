@@ -1,11 +1,17 @@
 from fastapi import FastAPI
+
 from app.api.v1.chat import router as chat_router
 from app.api.v1.health import router as health_router
+from app.core.config import get_settings
+from app.core.logging import setup_logging
+
+setup_logging()
+
+settings = get_settings()
 
 app = FastAPI(
-    title="Sales Assistant Agent API",
-    version="0.1.0",
-    description="API backend for the sales-assistant-agent project."
+    title=settings.APP_NAME,
+    version=settings.APP_VERSION,
 )
 
 # Routers
