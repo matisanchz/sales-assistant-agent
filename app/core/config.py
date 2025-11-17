@@ -20,9 +20,20 @@ class Settings(BaseSettings):
     # -------------------------
     # LLM / AI Providers
     # -------------------------
-    OPENAI_API_KEY: str | None = None
     GOOGLE_API_KEY: str | None = None
-    DEFAULT_MODEL: str = "gemini-2.0-flash-lite"
+    ANTHROPIC_API_KEY: str | None = None
+    DEFAULT_ANTHROPIC_MODEL: str = "claude-3-5-haiku-latest"
+
+    # -------------------------
+    # LLM Configs
+    # -------------------------
+    CHAT_TEMPERATURE: float = 0.3
+    BRAINSTORM_TEMPERATURE: float = 1
+
+    # -------------------------
+    # MCP Configs
+    # -------------------------
+    CALENDAR_MCP_URL: str = None
 
     # -------------------------
     # Database config
