@@ -29,6 +29,7 @@ class Settings(BaseSettings):
     # -------------------------
     CHAT_TEMPERATURE: float = 0.3
     BRAINSTORM_TEMPERATURE: float = 1
+    NUM_IDEAS: int = 3
 
     # -------------------------
     # MCP Configs
