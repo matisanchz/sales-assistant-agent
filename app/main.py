@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from app.api.v1.brainstorm import router as brainstorm_router
 from app.api.v1.chat import router as chat_router
+from app.api.v1.etl import router as etl_router
 from app.api.v1.health import router as health_router
 from app.core.config import get_settings
 from app.core.logging import setup_logging
@@ -19,6 +20,7 @@ app = FastAPI(
 app.include_router(health_router, prefix="/api/v1/health", tags=["health"])
 app.include_router(chat_router, prefix="/api/v1/chat", tags=["chatbot"])
 app.include_router(brainstorm_router, prefix="/api/v1/brainstorm", tags=["brainstorm"])
+app.include_router(etl_router, prefix="/api/v1/etl", tags=["etl-processes"])
 
 @app.get("/")
 async def root():

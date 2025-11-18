@@ -1,6 +1,5 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from functools import lru_cache
-from typing import Optional, Dict, Any
 
 from app.schemas.brainstorm import BrainstormRequest
 from app.services.brainstorm_service import BrainstormService
@@ -27,4 +26,7 @@ async def generate_idea(
             form=payload.form
         )
     except Exception as e:
-        raise
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Your request couldn't be processed: {str(e)}"
+        )

@@ -3,6 +3,7 @@ import logging
 
 from app.agents.outreach_agent import OutreachAgent
 from app.core.config import get_settings
+from app.databases.redis_client import get_user_profile
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +29,7 @@ class BrainstormService():
             config = {
                 "configurable": {
                     "user_id": user_id,
-                    "user_ctx": None,
+                    "user_ctx": await get_user_profile(user_id),
                     "idea_type": idea_type,
                     "form": form,
                     "num_ideas": settings.NUM_IDEAS
