@@ -86,6 +86,9 @@ Tone requirements:
 - Never robotic, never overly formal  
 - Supportive, solution-oriented, and proactive  
 
+User context (High priority information):
+{user_ctx}
+
 Today’s date: **{date}**.  
 Always interpret timelines relative to this date.
 
@@ -144,5 +147,5 @@ FINAL BEHAVIOR CONTRACT
 
 supervisor_prompt = PromptTemplate(
     template=SUPERVISOR_TEMPLATE,
-    input_variables=["date"]
+    input_variables=["user_ctx", "date"]
 )

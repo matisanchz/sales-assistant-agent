@@ -29,6 +29,7 @@ class Settings(BaseSettings):
     # -------------------------
     CHAT_TEMPERATURE: float = 0.3
     BRAINSTORM_TEMPERATURE: float = 1
+    NUM_IDEAS: int = 3
 
     # -------------------------
     # MCP Configs
@@ -44,6 +45,13 @@ class Settings(BaseSettings):
     # TTL Indexes
     # -------------------------
     TTL_CHAT: int = 2592000
+
+    # -------------------------
+    # Users ETL Config
+    # -------------------------
+    SEED_JSON_PATH: str = "etl/data/user_profiles_seed.json"
+    USER_KEY_PREFIX: str = "user_profile:"
+    USER_INDEX_KEY: str = "user_profiles:index"
 
     # -------------------------
     # Logging config

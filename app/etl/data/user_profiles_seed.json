@@ -1,0 +1,112 @@
+[
+    {
+        "user_id": "6760c2f4d17a4c5e9b4b12af",
+        "name": "Matias Sanchez",
+        "role": "Account Executive",
+        "company": "FlowStack",
+        "timezone": "America/Argentina/Buenos_Aires",
+        "preferred_language": "en",
+        "seniority": "mid",
+        "focus_industries": ["SaaS", "Fintech"],
+        "product_focus": "B2B productivity and workflow automation platform.",
+        "persona_summary": "Mid-level AE focused on mid-market SaaS and fintech accounts. Likes concise messaging and value-first outreach.",
+        "meeting_preferences": {
+        "default_duration_minutes": 30,
+        "preferred_days": ["Tuesday", "Wednesday", "Thursday"],
+        "preferred_time_window": "09:00-17:00"
+        },
+        "outreach_style": {
+        "tone": "friendly-professional",
+        "cta_preference": "low-friction yes/no questions",
+        "channels": ["email", "linkedin_dm"]
+        }
+    },
+    {
+        "user_id": "6760c2f4d17a4c5e9b4b12b0",
+        "name": "Maria Gomez",
+        "role": "Customer Success Manager",
+        "company": "SyncBridge",
+        "timezone": "America/Argentina/Buenos_Aires",
+        "preferred_language": "en",
+        "seniority": "senior",
+        "focus_industries": ["HR tech", "Productivity"],
+        "product_focus": "Employee engagement and internal communication platform.",
+        "persona_summary": "Senior CSM focused on retention, adoption and expansion. Very relationship-driven and customer-centric.",
+        "meeting_preferences": {
+        "default_duration_minutes": 45,
+        "preferred_days": ["Monday", "Wednesday", "Friday"],
+        "preferred_time_window": "10:00-18:00"
+        },
+        "outreach_style": {
+        "tone": "warm-consultative",
+        "cta_preference": "suggesting next steps or value-add sessions",
+        "channels": ["email", "video_call"]
+        }
+    },
+    {
+        "user_id": "6760c2f4d17a4c5e9b4b12b1",
+        "name": "James Lee",
+        "role": "Account Executive",
+        "company": "PipeBoost",
+        "timezone": "America/Los_Angeles",
+        "preferred_language": "en",
+        "seniority": "junior",
+        "focus_industries": ["E-commerce", "Retail SaaS"],
+        "product_focus": "Sales pipeline visibility and forecasting tool.",
+        "persona_summary": "Junior AE focused on SMB and lower mid-market, needs help with messaging, frameworks and objection handling.",
+        "meeting_preferences": {
+        "default_duration_minutes": 30,
+        "preferred_days": ["Tuesday", "Thursday"],
+        "preferred_time_window": "08:00-16:00"
+        },
+        "outreach_style": {
+        "tone": "direct-but-polite",
+        "cta_preference": "short intro calls",
+        "channels": ["email"]
+        }
+    },
+    {
+        "user_id": "6760c2f4d17a4c5e9b4b12b2",
+        "name": "Sofia Martinez",
+        "role": "Customer Success Manager",
+        "company": "TeamFlow",
+        "timezone": "Europe/Madrid",
+        "preferred_language": "en",
+        "seniority": "mid",
+        "focus_industries": ["Remote work", "Collaboration tools"],
+        "product_focus": "Team collaboration and async communication hub.",
+        "persona_summary": "CSM managing portfolios of 20–30 accounts, focused on onboarding quality and reducing churn.",
+        "meeting_preferences": {
+        "default_duration_minutes": 60,
+        "preferred_days": ["Wednesday", "Thursday"],
+        "preferred_time_window": "09:00-17:00"
+        },
+        "outreach_style": {
+        "tone": "empathetic-structured",
+        "cta_preference": "proposing QBRs or success reviews",
+        "channels": ["email", "in_app_message"]
+        }
+    },
+    {
+        "user_id": "6760c2f4d17a4c5e9b4b12b3",
+        "name": "Lucas Pereira",
+        "role": "Account Executive",
+        "company": "SignalMate",
+        "timezone": "America/Sao_Paulo",
+        "preferred_language": "en",
+        "seniority": "mid",
+        "focus_industries": ["Analytics", "Data tooling"],
+        "product_focus": "Signals and alerts platform for GTM teams.",
+        "persona_summary": "AE selling into RevOps and Sales Ops, cares a lot about ROI, metrics and dashboards.",
+        "meeting_preferences": {
+        "default_duration_minutes": 30,
+        "preferred_days": ["Monday", "Tuesday", "Thursday"],
+        "preferred_time_window": "09:00-19:00"
+        },
+        "outreach_style": {
+        "tone": "metrics-driven",
+        "cta_preference": "showing concrete use cases in short calls",
+        "channels": ["email", "linkedin_dm"]
+        }
+    }
+]

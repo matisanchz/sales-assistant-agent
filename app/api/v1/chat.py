@@ -1,6 +1,5 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from functools import lru_cache
-from typing import Optional, Dict, Any
 
 from app.schemas.chat_message import ChatMessageResponse, ChatMessageRequest
 from app.services.chat_service import ChatService
@@ -32,4 +31,7 @@ async def send_message(
             response=result["response"]
         )
     except Exception as e:
-        raise
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Your message couldn't be processed: {str(e)}"
+        )
