@@ -1,4 +1,3 @@
-
 from datetime import datetime
 from functools import lru_cache
 import json
@@ -69,6 +68,12 @@ async def get_current_title(meta_key):
         return meta.get("title", "Untitled Session")
     except (UnicodeDecodeError, json.JSONDecodeError):
         return None
+    
+async def get_user_profile(user_id: str) -> dict | None:
+    redis_store = get_redis_store().store
+    key = f"{settings.USER_KEY_PREFIX}{user_id}"
+    
+    return await redis_store.json().get(key)
     
 @lru_cache
 def get_redis_store() -> RedisBaseStore:

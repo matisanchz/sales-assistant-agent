@@ -1,16 +1,15 @@
 from bson import ObjectId
 from datetime import date
-from langgraph.graph.state import CompiledStateGraph
 from langgraph.prebuilt.chat_agent_executor import AgentState
 from langchain_anthropic import ChatAnthropic
-from langchain_core.messages import AnyMessage, ToolMessage, AIMessage
+from langchain_core.messages import AnyMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph_supervisor.supervisor import create_supervisor
 import logging
 
 from app.agents.calendar_agent import GoogleCalendarMCPAgent
 from app.core.config import get_settings
-from app.databases.redis_client import get_chat_history, get_redis_store, save_chat_history
+from app.databases.redis_client import get_chat_history, get_redis_store, get_user_profile, save_chat_history
 from app.prompts.supervisor import supervisor_prompt
 
 logger = logging.getLogger(__name__)
@@ -43,9 +42,13 @@ class ChatService():
 
     def prompt(self, state: AgentState, config: RunnableConfig) -> list[AnyMessage]:
         user_preferences = config["configurable"].get("user_preferences")
+        user_ctx = config["configurable"].get("user_ctx")
+
+        logger.info(f"USER INFO: {user_ctx}")
 
         system_msg = supervisor_prompt.format(
             #user_preferences = user_preferences,
+            user_ctx = user_ctx,
             date = date.today()
         )
 
@@ -63,6 +66,7 @@ class ChatService():
             config = {
                 "configurable": {
                     "user_id": user_id,
+                    "user_ctx": await get_user_profile(user_id),
                     "user_input": user_input,
                     "thread_id": thread_id,
                     "user_preferences": None
@@ -103,4 +107,4 @@ class ChatService():
             }
         except Exception as e:
             logger.warning(f"HttpError: {e}")
-            raise
+            raise e
