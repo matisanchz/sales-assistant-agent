@@ -1,3 +1,4 @@
+import json
 from langchain_anthropic import ChatAnthropic
 import logging
 
@@ -53,8 +54,8 @@ class BrainstormService():
 
             return {
                 "user_id": user_id,
-                "response": cleaned_response
+                "response": json.loads(cleaned_response)
             }
         except Exception as e:
             logger.warning(f"HttpError: {e}")
-            raise
+            raise e
